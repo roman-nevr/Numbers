@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:orientation="vertical"
+    >
+
+    <ru.romaberendeev.numbers.android.custom_views.CursiveTextView
+        android:id="@+id/quiz"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@drawable/rounded"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="20 + 30 = ?"
+        android:textSize="@dimen/tvExecTextSize"/>
+
+    <ru.romaberendeev.numbers.android.custom_views.CursiveTextView
+        android:id="@+id/answer"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@drawable/rounded"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="50"
+        android:textSize="@dimen/tvExecTextSize"/>
+
+    <LinearLayout
+        android:id="@+id/llColorable"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@color/neutral"
+        android:gravity="center"
+        android:visibility="visible">
+
+        <TextView
+            android:id="@+id/timer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="7"
+            android:text="01:23"
+            android:textSize="@dimen/tvInfoTextSize"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:text="Верно"
+            android:textColor="@color/infoGreen"
+            android:textSize="@dimen/tvInfoTextSize"
+            />
+
+        <TextView
+            android:id="@+id/right_counter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:paddingLeft="10dp"
+            android:text="11"
+            android:textColor="@color/infoGreen"
+            android:textSize="@dimen/tvInfoTextSize"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="15dp"
+            android:text="Неверно"
+            android:textColor="@color/infoRed"
+            android:textSize="@dimen/tvInfoTextSize"/>
+
+        <TextView
+            android:id="@+id/wrong_counter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:paddingLeft="10dp"
+            android:text="11"
+            android:textColor="@color/infoRed"
+            android:textSize="@dimen/tvInfoTextSize"/>
+    </LinearLayout>
+
+    <ru.romaberendeev.numbers.android.custom_views.KeyPad
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/key_pad"/>
+</LinearLayout>
+
+

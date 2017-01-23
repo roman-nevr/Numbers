@@ -1,0 +1,13 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <dimen name="digital_buuton_margin">4dp</dimen>
+    <dimen name="digital_button_corner_radius">4dp</dimen>
+    <dimen name="digital_button_text_size">40sp</dimen>
+    <dimen name="tvExecTextSize">35sp</dimen>
+    <dimen name="btnMenuButtonPadding">40dp</dimen>
+    <dimen name="tvInfoTextSize">22sp</dimen>
+
+</resources>

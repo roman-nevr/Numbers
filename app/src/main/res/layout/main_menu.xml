@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_margin="40dp"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="New Game"
+            android:textSize="@dimen/tvExecTextSize"
+            android:background="@drawable/rounded_dig_button"
+            android:layout_margin="5dp"
+            android:padding="@dimen/btnMenuButtonPadding"
+            android:id="@+id/btnStartGame" android:layout_gravity="center_horizontal"/>
+    <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Options"
+            android:textSize="@dimen/tvExecTextSize"
+            android:background="@drawable/rounded_dig_button"
+            android:layout_margin="5dp"
+            android:padding="@dimen/btnMenuButtonPadding"
+            android:id="@+id/btnOptions" android:layout_gravity="center_horizontal"/>
+    <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Records"
+            android:textSize="@dimen/tvExecTextSize"
+            android:background="@drawable/rounded_dig_button"
+            android:layout_margin="5dp"
+            android:padding="@dimen/btnMenuButtonPadding"
+            android:id="@+id/btnRecords" android:layout_gravity="center_horizontal"/>
+    <LinearLayout android:layout_width="fill_parent"
+                  android:layout_height="wrap_content"
+                  android:gravity="center"
+                  android:orientation="horizontal"
+                  android:layout_margin="10dp"
+            >
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Выбран уровень сложности "
+                android:id="@+id/tvDifficultyNote"/>
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="3dp"
+                android:text="0"
+                android:id="@+id/tvDifficulty"/>
+    </LinearLayout>
+</LinearLayout>

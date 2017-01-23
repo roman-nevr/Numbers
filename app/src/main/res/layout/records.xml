@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            >
+        <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+                android:text="Очки"
+                android:textSize="@dimen/tvInfoTextSize"
+                android:gravity="center"
+                />
+        <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+                android:text="Время"
+                android:textSize="@dimen/tvInfoTextSize"
+                android:gravity="center"
+                />
+        <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+                android:text="Верно"
+                android:textSize="@dimen/tvInfoTextSize"
+                android:textColor="@color/infoGreen"
+                android:gravity="center"
+                />
+        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                  android:text="Неверно"
+                  android:layout_weight="7"
+                  android:textSize="@dimen/tvInfoTextSize"
+                  android:textColor="@color/infoRed"
+                  android:gravity="center"/>
+    </LinearLayout>
+    <ListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/lvRecords"
+            >
+    </ListView>
+</LinearLayout>

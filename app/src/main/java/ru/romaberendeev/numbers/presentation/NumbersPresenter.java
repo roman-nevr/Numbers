@@ -1,9 +1,11 @@
 package ru.romaberendeev.numbers.presentation;
 
+import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
 import javax.inject.Inject;
 
+import ru.romaberendeev.numbers.android.App;
 import ru.romaberendeev.numbers.android.custom_views.KeyPad;
 import ru.romaberendeev.numbers.domain.StateKeeper;
 import ru.romaberendeev.numbers.domain.entity.NumbersState;
@@ -40,14 +42,25 @@ public class NumbersPresenter extends BasePresenter{
         subscription = new CompositeSubscription();
     }
 
-
-    @Override
-    public void init() {
-        newQuizInteractor.setDifficulty(1).execute();
+    public void init(int difficulty) {
+        boolean changed = stateKeeper.change(state ->{
+            if(state != null){
+                return false;
+            }else {
+                state = NumbersState.EMPTY;
+                return true;
+            }
+        });
+        System.out.println(new Date().getTime());
+        if(stateKeeper.getValue() == NumbersState.EMPTY){
+            newQuizInteractor.setDifficulty(difficulty).execute();
+        }
+        System.out.println(new Date().getTime());
     }
 
     @Override
     public void start() {
+        System.out.println("start " + new Date().getTime());
         subscription.add(digitEvent());
         subscription.add(enterEvent());
         subscription.add(clearEvent());
@@ -81,6 +94,7 @@ public class NumbersPresenter extends BasePresenter{
                 .distinctUntilChanged()
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(quiz -> {
+                    System.out.println("new quiz " + new Date().getTime());
                     view.setQuiz(quiz.quiz());
                 });
     }
@@ -140,20 +154,12 @@ public class NumbersPresenter extends BasePresenter{
         if(isRightAnswer()){
             increaseRightAnswersInteractor.execute();
             newQuizInteractor.setDifficulty(1).execute();
-            showRightAnimantion();
+            view.showRightAnimation();
         }else {
             increaseWrongAnswersInteractor.execute();
             newQuizInteractor.setDifficulty(1).execute();
-            showWrongAnimation();
+            view.showWrongAnimation();
         }
-    }
-
-    private void showWrongAnimation() {
-
-    }
-
-    private void showRightAnimantion() {
-
     }
 
     private boolean isRightAnswer() {
@@ -178,5 +184,9 @@ public class NumbersPresenter extends BasePresenter{
     @Override
     public void stop() {
         subscription.clear();
+    }
+
+    public void exit(){
+        ((App)view.provideContext()).clearNumbersComponent();
     }
 }

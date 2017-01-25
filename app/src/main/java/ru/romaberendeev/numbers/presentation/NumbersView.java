@@ -1,5 +1,7 @@
 package ru.romaberendeev.numbers.presentation;
 
+import android.content.Context;
+
 import ru.romaberendeev.numbers.android.custom_views.KeyPad;
 
 /**
@@ -14,4 +16,7 @@ public interface NumbersView {
     KeyPad getKeyPad();
     void setRightAnswers(int number);
     void setWrongAnswers(int number);
+    void showRightAnimation();
+    void showWrongAnimation();
+    Context provideContext();
 }

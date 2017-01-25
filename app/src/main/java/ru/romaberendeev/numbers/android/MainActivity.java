@@ -1,7 +1,9 @@
 package ru.romaberendeev.numbers.android;
 
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.Button;
 import android.widget.TextView;
 
 import butterknife.BindView;
@@ -13,34 +15,15 @@ import rx.subscriptions.CompositeSubscription;
 
 public class MainActivity extends AppCompatActivity {
 
-    @BindView(R.id.key_pad) KeyPad keyPad;
-    @BindView(R.id.answer) TextView tvAnswer;
-
-    private CompositeSubscription subscription;
+    @BindView(R.id.new_game) Button btnNewGame;
+    @BindView(R.id.options) Button btnOptions;
+    @BindView(R.id.records) Button btnRecord;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main);
+        setContentView(R.layout.main_menu);
         ButterKnife.bind(this);
-        subscription = new CompositeSubscription();
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-        subscription.add(digitalKeyEvent());
-    }
-
-    private Subscription digitalKeyEvent() {
-        return keyPad.getObservable().filter(this::isDigit).subscribe(d -> addDigitToAnswer(d));
-    }
-
-    private Boolean isDigit(Integer integer) {
-        return integer >= 0 && integer < 10;
-    }
-
-    private void addDigitToAnswer(Integer digit){
-        tvAnswer.setText(tvAnswer.getText().toString() + digit);
+        btnNewGame.setOnClickListener(v -> NumbersActivity.start(this, 1));
     }
 }

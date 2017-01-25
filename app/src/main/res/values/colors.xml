@@ -8,6 +8,6 @@
     <color name="red">#FFFF0000</color>
     <color name="green">#FF00FF00</color>
     <color name="neutral">#00000000</color>
-    <color name="infoRed">#d6ff8289</color>
-    <color name="infoGreen">#e6cbffb8</color>
+    <color name="infoRed">#b71c1c</color>
+    <color name="infoGreen">#44d946</color>
 </resources>

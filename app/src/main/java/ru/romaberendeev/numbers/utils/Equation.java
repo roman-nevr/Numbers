@@ -22,6 +22,8 @@ public class Equation {
 
         int maxAddOperand = 10, maxMultiplyOperand = 10, maxDivisionOperand = 10, maxSign = 0;
 
+        System.out.println("start calc quiz" + new Date().getTime());
+
         switch (difficulty){
             case 1:{
                 maxAddOperand = 10;
@@ -98,6 +100,7 @@ public class Equation {
             }
         }
 
+        System.out.println("finish calc quiz" + new Date().getTime());
         return Quiz.create(expression, result);
         /*Log.d("myLog",expression+" "+result);
 
